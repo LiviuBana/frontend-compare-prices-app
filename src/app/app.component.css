@@ -1,19 +1,23 @@
 h1{
-    font-family: cursive;
     margin-top: 50px;
-    text-align: center;
+    margin-left: 50px;
+    text-align: left;
 }
 
 .container {
+    float: left;
     margin: 0 auto;
-    width: 500px;
+    width: 1000px;
     margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: left;
   }
   
   .searchBar {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
   }
   
   .searchBarClear {
@@ -22,15 +26,73 @@ h1{
   }
   
   .searchBarInput {
-    width: 300px;
+    
+    width: 700px;
+    height: 30px;
     font-size: 16px;
+    margin-left: 50px;
+    border-radius: 4px;
+    border: 2px solid grey;width: 180px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/015/337/677/non_2x/transparent-search-icon-free-png.png'); 
+    background-size: 35px 35px ;
+    background-repeat: no-repeat;
+    padding: 20px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+  }
+  .searchBarInput:focus{
+    width: 100%;
   }
   
-  .articlesTable {
+  
+  .itemsTable {
+    
+    display: block;
     margin-top: 80px;
-    text-align: center;
+    margin-left: 50px;
+    margin-right: auto;
+    align-items: left;
   }
   
-  .article {
-    margin: 10px 0;
+
+  .item {
+    display: block;
+    align-items: left;
+    width: 1100px;
+    border: 5px solid rgb(5, 5, 93);
+    padding: 30px;
+    margin: 20px;
+    background-color: #fff
+  }
+
+  .url_site{
+    margin: 5px;
+  }
+  .phone_title{
+    color :black;
+    margin-left: 10px;
+    font-size: 18px;
+  }
+
+  .phone_title :hover{
+    color: rgb(75, 75, 99);
+  }
+
+  .phone_price{
+    margin-left: 20px;
+    color : peru;
+    font-weight :bold;
+    font-size: large;
+  }
+
+  .phone_availability{
+    margin-left: 20px;
+    color: rgb(4, 97, 4);
+    font-weight :bold;
+    font-size: large;
+
   }

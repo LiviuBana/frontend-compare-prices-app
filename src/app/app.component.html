@@ -1,15 +1,17 @@
-<app-menu>ComparePhonePrices</app-menu>
-<h1>Search phone</h1>
+<app-menu class="menu">
+
+</app-menu>
+
 
 <div class="container">
-    <form
+   <form
       [formGroup]="searchForm"
       class="searchBar"
       (ngSubmit)="onSearchSubmit()"
     >
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Search phone..."
         formControlName="searchValue"
         class="searchBarInput"
       />
@@ -19,10 +21,10 @@
         <a class="url_site" href={{item.site}}>
           <img src={{item.logo}} alt="">
         </a>
-        <a class="name" href={{item.url}}>
+        <a class="phone_title" href={{item.url}}>
         <span>{{item.title}}</span></a>
-        <span>{{item.price}}</span>
-        <span>{{item.availability}}</span>
+        <span class="phone_price">{{item.price}}</span>
+        <span class="phone_availability">{{item.availability}}</span>
         
       </div>
     </div>
