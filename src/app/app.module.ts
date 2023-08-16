@@ -9,6 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ItemsService } from './items/items.service';
+import { ImageSliderModule } from './imageSlider/imageSlider.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { ItemsService } from './items/items.service';
     BrowserAnimationsModule,
     MatToolbarModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ImageSliderModule
   ],
   providers: [ItemsService],
   bootstrap: [AppComponent]
