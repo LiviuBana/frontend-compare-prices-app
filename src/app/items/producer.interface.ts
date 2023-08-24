@@ -1,3 +1,3 @@
-export interface Producers{
-    producer:string;
+export interface ProducerInterface {
+    producer: string;
 }

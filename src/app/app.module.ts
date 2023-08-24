@@ -10,10 +10,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ItemsService } from './items/items.service';
 import { ImageSliderModule } from './imageSlider/imageSlider.module';
+import { ProducersMenuComponent } from './producers-menu/producers-menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatProgressSpinnerModule}from '@angular/material/progress-spinner'
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    ProducersMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,10 @@ import { ImageSliderModule } from './imageSlider/imageSlider.module';
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,
-    ImageSliderModule
+    ImageSliderModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
+
   ],
   providers: [ItemsService],
   bootstrap: [AppComponent]

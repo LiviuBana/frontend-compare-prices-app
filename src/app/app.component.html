@@ -5,32 +5,32 @@
   <image-slider [slides]="slides"></image-slider>
 </div>
 
-<button class="categoryButton" (click)="searchCategory()" clickable>Search by Category</button>
+
+
 <div class="container">
-   <form
-      [formGroup]="searchForm"
-      class="searchBar"
-      (ngSubmit)="onSearchSubmit()"
-    >
-      <input
-        type="text"
-        placeholder="Search phone..."
-        formControlName="searchValue"
-        class="searchBarInput"
-      />
-    </form>
-    <div class="itemsTable">
-      <div class="item" *ngFor="let item of items"> 
-        <a class="url_site" href={{item.site}}>
-          <img src={{item.logo}} alt="">
-        </a>
-        <a class="phone_title" href={{item.url}}>
+
+
+  <app-producers-menu
+    [trigger]="'Search by category'"
+    [data]="producers"
+  ></app-producers-menu>
+
+
+  <form [formGroup]="searchForm" class="searchBar" (ngSubmit)="onSearchSubmit()">
+    <input type="text" placeholder="Search phone..." formControlName="searchValue" class="searchBarInput" />
+  </form>
+  <div class="itemsTable">
+    <div class="item" *ngFor="let item of items">
+      <a class="url_site" href={{item.site}}>
+        <img src={{item.logo}} alt="">
+      </a>
+      <a class="phone_title" href={{item.url}}>
         <span>{{item.title}}</span></a>
-        <a class="phone_price" href={{item.url}}> 
-          <span>{{item.price}}</span></a>
-        <span class="phone_availability">{{item.availability}}</span>
-        <a class="storeButton" href={{item.url}}>to the store</a>
-        
-      </div>
+      <a class="phone_price" href={{item.url}}>
+        <span>{{item.price}}</span></a>
+      <span class="phone_availability">{{item.availability}}</span>
+      <a class="storeButton" href={{item.url}}>to the store</a>
+
     </div>
   </div>
+</div>

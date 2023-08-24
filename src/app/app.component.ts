@@ -4,6 +4,7 @@ import { ItemInterface } from './items/item.interface';
 import { FormBuilder } from '@angular/forms';
 import { SlideInterface } from './imageSlider/types/slide.interface';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,9 +27,14 @@ export class AppComponent implements OnInit {
     searchValue: '',
   });
   items: ItemInterface[] = [];
-
+  producers: string[] = [];
+  models:string[] = [];
   
-  constructor(private itemsService: ItemsService ,private fb: FormBuilder){}
+  constructor(private itemsService: ItemsService ,private fb: FormBuilder){
+    this.itemsService.getProducers().subscribe((producers)=>{
+      this.producers=producers;
+    });
+  }
 
   ngOnInit(): void {
     this.fetchData();
