@@ -11,6 +11,7 @@ import { SlideInterface } from './imageSlider/types/slide.interface';
 })
 export class AppComponent implements OnInit {
 
+
   slides: SlideInterface[] = [
     { url: '/assets/image-1.jpg', title: 'beach' },
     { url: '/assets/image-2.jpg', title: 'boat' },
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit {
     searchValue: '',
   });
   items: ItemInterface[] = [];
+
   
   constructor(private itemsService: ItemsService ,private fb: FormBuilder){}
 
@@ -42,4 +44,8 @@ export class AppComponent implements OnInit {
     this.searchValue=this.searchForm.value.searchValue ?? '';
     this.fetchData();
   }
+
+  searchCategory() {
+    throw new Error('Method not implemented.');
+    }
 }
