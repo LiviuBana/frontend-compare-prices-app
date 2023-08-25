@@ -112,7 +112,7 @@ h1{
 
   
   .storeButton {
-    float:right;
+    
     background-color: #008CBA;;
     border: none;
     color: white;
@@ -127,7 +127,7 @@ h1{
   }
 
   .categoryButton{
-    float:left;
+    
     background-color: #ba7f00;
     border: none;
     color: rgb(25, 24, 24);

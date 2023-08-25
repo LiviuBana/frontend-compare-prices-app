@@ -27,9 +27,7 @@ export class AppComponent implements OnInit {
     searchValue: '',
   });
   items: ItemInterface[] = [];
-  producers: string[] = [];
-  models:string[] = [];
-  
+  producers: string[] = [];  
   constructor(private itemsService: ItemsService ,private fb: FormBuilder){
     this.itemsService.getProducers().subscribe((producers)=>{
       this.producers=producers;
@@ -50,8 +48,4 @@ export class AppComponent implements OnInit {
     this.searchValue=this.searchForm.value.searchValue ?? '';
     this.fetchData();
   }
-
-  searchCategory() {
-    throw new Error('Method not implemented.');
-    }
 }

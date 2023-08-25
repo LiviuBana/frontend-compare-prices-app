@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {RouterModule,Routes} from'@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -12,12 +12,18 @@ import { ItemsService } from './items/items.service';
 import { ImageSliderModule } from './imageSlider/imageSlider.module';
 import { ProducersMenuComponent } from './producers-menu/producers-menu.component';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatProgressSpinnerModule}from '@angular/material/progress-spinner'
+
+import { ProducerModelsComponent } from './producer-models/producer-models.component';
+// const routes : Routes=[
+//   {path:'home',component:AppComponent },
+//   {path:'models/:producer', component:ProducerModelsComponent}
+// ]
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    ProducersMenuComponent
+    ProducersMenuComponent,
+    ProducerModelsComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,7 @@ import {MatProgressSpinnerModule}from '@angular/material/progress-spinner'
     ReactiveFormsModule,
     ImageSliderModule,
     MatMenuModule,
-    MatProgressSpinnerModule,
+    
 
   ],
   providers: [ItemsService],

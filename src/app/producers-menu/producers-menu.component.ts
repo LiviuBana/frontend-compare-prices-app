@@ -1,5 +1,6 @@
 import { Component,Input } from '@angular/core';
 import { ItemsService } from '../items/items.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-producers-menu',
   templateUrl: './producers-menu.component.html',
@@ -11,7 +12,7 @@ export class ProducersMenuComponent {
   //@Input() isRootNode = false;
 
 
-  constructor(private itemsService: ItemsService){}
+  constructor(private itemsService: ItemsService,private router: Router){}
 
   isLoading=false;
   dataLoaded=false;
@@ -26,4 +27,9 @@ export class ProducersMenuComponent {
       });
   }
 }
+  onBtnClick(producer : string){
+
+    this.router.navigate(['/models',producer]);
+  }
 }
+
