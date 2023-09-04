@@ -112,8 +112,8 @@ h1{
 
   
   .storeButton {
-    
-    background-color: #008CBA;;
+    float:right;
+    background-color: #008CBA;
     border: none;
     color: white;
     padding: 10px 24px;
