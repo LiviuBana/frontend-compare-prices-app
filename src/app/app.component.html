@@ -1,24 +1,33 @@
-<app-menu class="menu">
 
-</app-menu>
+<div class="header">
+  <div class="dropdowns">
+    <app-producers-menu
+    (phoneFound)="onPhoneFound($event)"
+    [trigger]="'Search by category'"
+    [producers]="producers"
+  ></app-producers-menu>
+
+  </div>
+
+  <div class="search">
+<!-- 
+    <mat-form-field class="example-form-field" onkeydown="">
+      <input matInput type="text" placeholder="Clearable input" [(ngModel)]="searchTerm">
+      <button mat-button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchSubmit()">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </mat-form-field> -->
+    <form [formGroup]="searchForm" class="searchBar" (ngSubmit)="onSearchSubmit()">
+      <input type="text" placeholder="Search phone..." formControlName="searchValue" class="searchBarInput" />
+    </form>
+  </div>
+</div>
+
 <div style="width: 500px; height: 200px; margin: 0 auto">
   <image-slider [slides]="slides"></image-slider>
 </div>
 
-
-
 <div class="container">
-
-
-  <app-producers-menu
-    [trigger]="'Search by category'"
-    [data]="producers"
-  ></app-producers-menu>
-
-
-  <form [formGroup]="searchForm" class="searchBar" (ngSubmit)="onSearchSubmit()">
-    <input type="text" placeholder="Search phone..." formControlName="searchValue" class="searchBarInput" />
-  </form>
   <div class="itemsTable">
     <div class="item" *ngFor="let item of items">
       <a class="url_site" href={{item.site}}>
@@ -30,7 +39,6 @@
         <span>{{item.price}}</span> RON</a>
       <span class="phone_availability">{{item.availability}}</span>
       <a class="storeButton" href={{item.url}}>to the store</a>
-
     </div>
   </div>
 </div>

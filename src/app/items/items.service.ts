@@ -21,7 +21,7 @@ export class ItemsService {
   getModels(searchValue:string):Observable<string[]>{
     return this.http.get<string[]>(
       `https://localhost:7078/api/Products/models-of-${searchValue}`
-    ).pipe(delay(2000));
+    ).pipe(delay(255));
   }
   
 

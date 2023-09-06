@@ -1,6 +1,30 @@
-<button mat-menu-button [matMenuTriggerFor]="producersMenu">
+<!-- <button mat-menu-button [matMenuTriggerFor]="producersMenu">
     {{trigger}}</button>
 
-<mat-menu #producersMenu="matMenu">
+ <mat-menu #producersMenu="matMenu">
     <button mat-menu-item (click)="onBtnClick(node)" *ngFor="let node of data">{{ node }}</button>
-</mat-menu>
+</mat-menu> -->
+
+<div class="wrapper">
+    <div class="producers">
+        <mat-form-field>
+            <mat-label>Producers</mat-label>
+            <mat-select (selectionChange)="onOptionChanged($event)">
+                <mat-option *ngFor="let producer of producers" [value]="producer">
+                    {{producer}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="models" *ngIf="models.length > 0">
+        <mat-form-field>
+            <mat-label>Models</mat-label>
+            <mat-select (selectionChange)="onModelChanged($event)">
+                <mat-option *ngFor="let model of models" [value]="model">
+                    {{model}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 32px;
+    margin-left: 32px;
+    align-items: center;
+}
+
+.models, .producers {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}

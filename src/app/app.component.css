@@ -48,22 +48,20 @@ h1{
   .searchBarInput:focus{
     width: 100%;
   }
-  
-  
+
   .itemsTable {
-    float:left;
+    
     display: block;
     margin-top: 80px;
-    margin-left: 50px;
     margin-right: auto;
     align-items: left;
   }
   
 
   .item {
-    float:left;
     display: block;
-    width: 1200px;
+    align-items: left;
+    width: 1400px;
     border: 5px solid rgb(5, 5, 93);
     padding: 30px;
     margin: 20px;
@@ -77,7 +75,7 @@ h1{
   .phone_title{
     color :black;
     margin-left: 10px;
-    font-size: 16px;
+    font-size: 18px;
     
   }
   .phone_title:link{
@@ -92,7 +90,7 @@ h1{
     margin-left: 20px;
     color : peru;
     font-weight :bold;
-    font-size: medium;
+    font-size: large;
   }
   .phone_price:link{
     text-decoration: none;
@@ -107,13 +105,13 @@ h1{
     margin-left: 20px;
     color: rgb(4, 97, 4);
     font-weight :bold;
-    font-size: medium;
+    font-size: large;
   }
 
   
   .storeButton {
     float:right;
-    background-color: #008CBA;
+    background-color: #008CBA;;
     border: none;
     color: white;
     padding: 10px 24px;
@@ -125,7 +123,7 @@ h1{
     margin-left: 20px;
     cursor: pointer;
   }
-
+  
   .categoryButton{
     
     background-color: #ba7f00;
@@ -140,3 +138,17 @@ h1{
     margin-left: 50px;
     cursor: pointer;
   }
+
+  .header {
+    width: 100%;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: burlywood;
+    align-items: center;
+  }
+
+  .search {
+    margin-right: 32px;
+  }
+
