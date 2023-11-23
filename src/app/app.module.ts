@@ -15,10 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-// const routes : Routes=[
-//   {path:'home',component:AppComponent },
-//   {path:'models/:producer', component:ProducerModelsComponent}
-// ]
+
 @NgModule({
   declarations: [
     AppComponent,

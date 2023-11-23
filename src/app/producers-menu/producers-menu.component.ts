@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ItemsService } from '../items/items.service';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-producers-menu',
   templateUrl: './producers-menu.component.html',
@@ -8,35 +8,19 @@ import { Router } from '@angular/router';
 })
 export class ProducersMenuComponent {
   @Input() producers: string[] = [];
-  @Input() trigger = "Trigger";
+  
   @Output() phoneFound: EventEmitter<string> = new EventEmitter<string>()
-  //@Input() isRootNode = false;
   models: string[] = [];
 
   private selectedProducer: string = '';
   private selectedModel: string = '';
-  constructor(private itemsService: ItemsService, private router: Router) { }
+  constructor(private itemsService: ItemsService) { }
 
   isLoading = false;
   dataLoaded = false;
 
-  // getModels(producer: string) {
-  //   if (!this.dataLoaded) {
-  //     this.isLoading = true;
-  //     this.itemsService.getModels(producer).subscribe((d) => {
-  //       this.producers = d;
-  //       this.isLoading = false;
-  //       this.dataLoaded = true;
-  //     });
-  //   }
-  // }
 
-  onBtnClick(producer: string) {
-
-    this.router.navigate(['/models', producer]);
-  }
-
-  onOptionChanged(event: any) {
+  onProducerChanged(event: any) {
     this.selectedProducer = event.value;
     this.clearModels();
 

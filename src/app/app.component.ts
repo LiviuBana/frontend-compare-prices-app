@@ -14,36 +14,36 @@ import { SlideInterface } from './imageSlider/types/slide.interface';
 export class AppComponent implements OnInit {
 
   slides: SlideInterface[] = [
-    { url: '/assets/image-1.jpg', title: 'beach' },
-    { url: '/assets/image-2.jpg', title: 'boat' },
-    { url: '/assets/image-3.jpg', title: 'forest' },
-    { url: '/assets/image-4.jpg', title: 'city' },
-    { url: '/assets/image-5.jpg', title: 'italy' },
+    { url: '/assets/image-1.jpg', title: 'samsung' },
+    { url: '/assets/image-2.jpg', title: 'iphone' },
+    { url: '/assets/image-3.jpg', title: 'oneplus' },
+    { url: '/assets/image-4.jpg', title: 'redmi' },
+    { url: '/assets/image-5.jpg', title: 'xiaomi' },
   ];
 
-  title = 'angular-compare-prices';
+
   searchValue = '';
   searchForm = this.fb.nonNullable.group({
     searchValue: '',
   });
 
-  searchTerm = '';
+
   items: ItemInterface[] = [];
   producers: string[] = [];
   models: string[] = [];
 
+  showItem=false
+
   constructor(private itemsService: ItemsService, private fb: FormBuilder) {
+    
+  }
+
+
+
+  ngOnInit(): void {
     this.itemsService.getProducers().subscribe((producers) => {
       this.producers = producers;
     });
-  }
-
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
-  ngOnInit(): void {
-    this.fetchData();
   }
 
   fetchData(): void {
@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
 
   onSearchSubmit(): void {
     this.searchValue = this.searchForm.value.searchValue ?? '';
-
+    this.showItem=true
     this.itemsService.getArticles(this.searchValue).subscribe((items) => {
       this.items = items;
     });
@@ -62,6 +62,7 @@ export class AppComponent implements OnInit {
 
   onPhoneFound(phone: string) {
     this.searchForm.reset();
+    this.showItem=true
     this.itemsService.getArticles(phone).subscribe((items) => {
       this.items = items;
     });

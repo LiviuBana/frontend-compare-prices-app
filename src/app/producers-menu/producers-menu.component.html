@@ -1,15 +1,10 @@
-<!-- <button mat-menu-button [matMenuTriggerFor]="producersMenu">
-    {{trigger}}</button>
 
- <mat-menu #producersMenu="matMenu">
-    <button mat-menu-item (click)="onBtnClick(node)" *ngFor="let node of data">{{ node }}</button>
-</mat-menu> -->
 
 <div class="wrapper">
     <div class="producers">
         <mat-form-field>
             <mat-label>Producers</mat-label>
-            <mat-select (selectionChange)="onOptionChanged($event)">
+            <mat-select (selectionChange)="onProducerChanged($event)">
                 <mat-option *ngFor="let producer of producers" [value]="producer">
                     {{producer}}
                 </mat-option>
